@@ -1,11 +1,12 @@
 fileFormatVersion: 2
 guid: 038ab8db2606ae8458abef8bb5585bd9
-timeCreated: 1483039257
+timeCreated: 1483085428
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
     21300000: background_0
     21300002: background_1
+    21300004: background_2
   serializedVersion: 4
   mipmaps:
     mipMapMode: 0
@@ -103,6 +104,19 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 64, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: background_2
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 306
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     outline: []
