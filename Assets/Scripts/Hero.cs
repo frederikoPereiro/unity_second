@@ -10,6 +10,7 @@ public class Hero : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		print (myFunction (a, b));
+		secondFunction ();
 	}
 
 	// Update is called once per frame
@@ -17,11 +18,18 @@ public class Hero : MonoBehaviour {
 		
 	}
 
-	int myFunction(int first, int second)
+	private int myFunction(int first, int second)
 	{
 		return first+second;
 	}
-
-
-
+		
+	private void secondFunction()
+	{
+		int i = 0;
+		while(i<10)
+		{
+			print ("i = " + i);
+			i++;
+		}
+	}
 }
