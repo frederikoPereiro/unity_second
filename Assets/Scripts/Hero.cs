@@ -11,14 +11,13 @@ public class Hero : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		positionOfBucket = new Vector3 (this.transform.position.x, this.transform.position.y, 0);
-		print (positionOfBucket);
-
+		
 	}
 
 	// Update is called once per frame
 	void Update () {
-		
+		positionOfBucket = new Vector3 (-1, 3, 0);
+		this.transform.position = positionOfBucket;
 	}
 
 	private int myFunction(int first, int second)
