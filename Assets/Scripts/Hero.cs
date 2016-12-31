@@ -4,13 +4,16 @@ using UnityEngine;
 
 public class Hero : MonoBehaviour {
 
-	private int a = 5;
-	private int b = 6;
+//	private int a = 5;
+//	private int b = 6;
+
+	Vector3 positionOfBucket;
 
 	// Use this for initialization
 	void Start () {
-		print (myFunction (a, b));
-		secondFunction ();
+		positionOfBucket = new Vector3 (this.transform.position.x, this.transform.position.y, 0);
+		print (positionOfBucket);
+
 	}
 
 	// Update is called once per frame
