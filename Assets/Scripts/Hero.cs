@@ -9,6 +9,7 @@ public class Hero : MonoBehaviour {
 	private int secondElement = 0;
 	private int thirdElement = 0;
 	private int value = 5;
+	private int valueOne = 6;
 
 	// Use this for initialization
 	void Start () {
@@ -16,6 +17,8 @@ public class Hero : MonoBehaviour {
 		firstObject.a = 1;
 		int a = firstObject.getValue ();
 		firstObject.print (a);
+		ThirdClass thirdObject = new ThirdClass (valueOne);
+		firstObject.print (valueOne);
 	}
 
 	// Update is called once per frame
@@ -47,7 +50,6 @@ public class Hero : MonoBehaviour {
 		{
 			setValue(a);
 		}
-
 		private void setValue(int value)
 		{
 			b = value;
@@ -62,8 +64,15 @@ public class Hero : MonoBehaviour {
 			string logMessage = "variable is " + a;
 			Debug.Log (logMessage);
 		}
-
-
 	}
+	private class ThirdClass
+	{
+		private int numerCommon;
 
+		//the constructor
+		public ThirdClass(int numer)
+		{
+			numerCommon = numer;
+		}
+	}
 }
