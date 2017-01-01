@@ -11,6 +11,10 @@ public class Hero : MonoBehaviour {
 	private int value = 5;
 	private int valueOne = 6;
 
+	private float xPosition = -1.0f;
+	private float yPosition = 3.0f;
+	private const float ZPOSITION = 0.0f;
+
 	// Use this for initialization
 	void Start () {
 		InsteadClass firstObject = new InsteadClass (value);
@@ -23,7 +27,7 @@ public class Hero : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-		positionOfBucket = new Vector3 (-1, 3, 0);
+		positionOfBucket = new Vector3 (xPosition, yPosition, ZPOSITION);
 		this.transform.position = positionOfBucket;
 	}
 
