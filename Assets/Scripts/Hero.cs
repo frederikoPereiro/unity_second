@@ -17,11 +17,8 @@ public class Hero : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		InsteadClass firstObject = new InsteadClass (value);
-		firstObject.a = 1;
-		int a = firstObject.getValue ();
-		firstObject.print (a);
-		firstObject.print (valueOne);
+
+
 	}
 
 	private void rotationMethod()
@@ -47,33 +44,5 @@ public class Hero : MonoBehaviour {
 			Debug.Log (firstElement);
 		}
 	}
-
-	private class InsteadClass
-	{
-		public int a;
-		private int b;
-
-		//the constructor
-		public InsteadClass(int a)
-		{
-			setValue(a);
-		}
-		private void setValue(int value)
-		{
-			b = value;
-		}
-		public int getValue()
-		{
-			return b;
-		}
-		//the method
-		public void print(int a)
-		{
-			string logMessage = "variable is " + a;
-			Debug.Log (logMessage);
-		}
-	}
-
-
-
+		
 }
