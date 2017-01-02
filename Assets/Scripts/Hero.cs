@@ -21,7 +21,6 @@ public class Hero : MonoBehaviour {
 		firstObject.a = 1;
 		int a = firstObject.getValue ();
 		firstObject.print (a);
-		ThirdClass thirdObject = new ThirdClass (valueOne);
 		firstObject.print (valueOne);
 	}
 
@@ -69,14 +68,5 @@ public class Hero : MonoBehaviour {
 			Debug.Log (logMessage);
 		}
 	}
-	private class ThirdClass
-	{
-		private int numerCommon;
 
-		//the constructor
-		public ThirdClass(int numer)
-		{
-			numerCommon = numer;
-		}
-	}
 }
