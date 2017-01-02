@@ -24,10 +24,15 @@ public class Hero : MonoBehaviour {
 		firstObject.print (valueOne);
 	}
 
+	private void rotationMethod()
+	{
+		this.transform.rotation = Quaternion.Euler (new Vector3 (0, 0, Input.mousePosition.x));
+	}
 	// Update is called once per frame
 	void Update () {
-		positionOfBucket = new Vector3 (xPosition, yPosition, ZPOSITION);
-		this.transform.position = positionOfBucket;
+//		positionOfBucket = new Vector3 (xPosition, yPosition, ZPOSITION);
+//		this.transform.position = positionOfBucket;
+		rotationMethod ();
 	}
 
 	private void FunctionOne()
@@ -68,5 +73,7 @@ public class Hero : MonoBehaviour {
 			Debug.Log (logMessage);
 		}
 	}
+
+
 
 }
