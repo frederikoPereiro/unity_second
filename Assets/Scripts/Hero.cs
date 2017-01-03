@@ -4,6 +4,14 @@ using UnityEngine;
 
 public class Hero : MonoBehaviour {
 
+	public GameObject heroObject;
+	public GameObject dropObject;
+
+
+
+
+
+
 	private Vector3 positionOfBucket;
 	private int firstElement = 0;
 	private int secondElement = 0;
@@ -24,12 +32,34 @@ public class Hero : MonoBehaviour {
 	private void rotationMethod()
 	{
 		this.transform.rotation = Quaternion.Euler (new Vector3 (0, 0, Input.mousePosition.x));
+
 	}
+		
+	private void changeObjectColor()
+	{
+		Color col = Color.red;
+		float Ax = heroObject.transform.position.x;
+		float Bx = dropObject.transform.position.x;
+
+		if(Ax < Bx)
+		{
+			col = Color.blue;
+		}
+		else
+		{
+			col = Color.red;
+		}
+		GetComponent<Renderer> ().material.color = col;
+	}
+
+
 	// Update is called once per frame
 	void Update () {
 //		positionOfBucket = new Vector3 (xPosition, yPosition, ZPOSITION);
 //		this.transform.position = positionOfBucket;
 		rotationMethod ();
+		changeObjectColor ();
+
 	}
 
 	private void FunctionOne()
