@@ -6,28 +6,10 @@ public class Hero : MonoBehaviour {
 	//create game object
 	public GameObject heroObject;
 	public GameObject dropObject;
-	//
-	private Vector3 positionOfBucket;
-	private int firstElement = 0;
-	private int secondElement = 0;
-	private int thirdElement = 0;
-	private int value = 5;
-	private int valueOne = 6;
-
-	private float xPosition = -1.0f;
-	private float yPosition = 3.0f;
-	private const float ZPOSITION = 0.0f;
-
-	// Use this for initialization
-	void Start () {
-
-
-	}
 
 	private void rotationMethod()
 	{
 		this.transform.rotation = Quaternion.Euler (new Vector3 (0, 0, Input.mousePosition.x));
-
 	}
 		
 	private void changeObjectColor()
@@ -39,6 +21,8 @@ public class Hero : MonoBehaviour {
 		if(Ax < Bx)
 		{
 			col = Color.blue;
+//			Debug.Log (Ax);
+//			Debug.Log (Bx);
 		}
 		else
 		{
@@ -47,7 +31,24 @@ public class Hero : MonoBehaviour {
 		GetComponent<Renderer> ().material.color = col;
 	}
 
+	private void runawayLoopsMethod()
+	{
+		Debug.Log ("start ");
+		for(;;)
+		{
+			Debug.Log ("before return");
+			break;
+		}
+		Debug.Log ("outside for loops ");
+	}
 
+	// Use this for initialization
+	void Start () {
+		runawayLoopsMethod ();
+
+
+	}
+		
 	// Update is called once per frame
 	void Update () {
 //		positionOfBucket = new Vector3 (xPosition, yPosition, ZPOSITION);
@@ -55,19 +56,6 @@ public class Hero : MonoBehaviour {
 		rotationMethod ();
 		changeObjectColor ();
 
-	}
-
-	private void FunctionOne()
-	{
-		if(secondElement > firstElement)
-		{
-			thirdElement = secondElement + firstElement;
-			Debug.Log ("element = " + thirdElement);
-		}
-		else
-		{
-			Debug.Log (firstElement);
-		}
 	}
 		
 }
