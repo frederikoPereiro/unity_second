@@ -3,15 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Hero : MonoBehaviour {
-
+	//create game object
 	public GameObject heroObject;
 	public GameObject dropObject;
-
-
-
-
-
-
+	//
 	private Vector3 positionOfBucket;
 	private int firstElement = 0;
 	private int secondElement = 0;
