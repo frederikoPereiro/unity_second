@@ -6,6 +6,7 @@ public class Hero : MonoBehaviour {
 	//create game object
 	public GameObject heroObject;
 	public GameObject dropObject;
+	public SecondScript secondScript;
 
 	private void rotationMethod()
 	{
@@ -42,11 +43,19 @@ public class Hero : MonoBehaviour {
 		Debug.Log ("outside for loops ");
 	}
 
+	public void findGameOnScene()
+	{
+		GameObject[] gameOnScreen = Object.FindObjectsOfType(typeof(GameObject)) as GameObject[];
+		foreach(GameObject go in gameOnScreen)
+		{
+			Debug.Log (go);
+		}
+	}
+		
 	// Use this for initialization
 	void Start () {
 		runawayLoopsMethod ();
-
-
+		findGameOnScene ();
 	}
 		
 	// Update is called once per frame
