@@ -12,7 +12,17 @@ public class Hero : MonoBehaviour {
 		
 	// Update is called once per frame
 	void Update () {
+		moveBucket ();
 
+
+	}
+
+	private void moveBucket()
+	{
+		Vector3 positionBucket = new Vector3 (this.transform.position.x, this.transform.position.y, 0);
+		float mouseCurrentPositionX = Input.mousePosition.x / Screen.width * 10;
+		positionBucket.x = Mathf.Clamp (mouseCurrentPositionX, -4.24f, 4.24f);
+		this.transform.position = positionBucket;
 	}
 		
 }
