@@ -4,7 +4,7 @@ using System.Collections;
 public class BallScript : MonoBehaviour
 {
 	public PaddleScript paddle;
-	private bool gameStarted = false;
+	public bool gameStarted = false;
 	private Vector3 paddleVector;
 
 
