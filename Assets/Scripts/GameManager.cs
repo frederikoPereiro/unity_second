@@ -37,7 +37,8 @@ public class GameManager : MonoBehaviour {
 
 		//find all objects of different types on a screen
 //		allStars = FindObjectsOfType (typeof(StarClass)) as StarClass[];
-//		allBalls = FindObjectsOfType (typeof(BallScript)) as BallScript[];
+		allBalls = FindObjectsOfType (typeof(BallScript)) as BallScript[];	//to find all balls
+//		Debug.Log (allBalls.Length);
 //		paddle = GameObject.FindObjectOfType<PaddleScript> ();
 		SwitchState(GameStatus.NotStart); 
 	}
@@ -51,15 +52,16 @@ public class GameManager : MonoBehaviour {
 			}
 			break;
 		case GameStatus.Played:
-			
 			Timer += Time.deltaTime;
 			minutes = Mathf.FloorToInt (Timer / 60f);
 			seconds = Mathf.FloorToInt (Timer - minutes * 50);
 			formattedTime = string.Format ("{0:0}:{1:00}", minutes, seconds);
+//			Debug.Log ("played");
 //			bool allBlocksDestroyed = false;
-//			if (FindObjectOfType (typeof(BallScript)) == null) {
-//				SwitchState (GameStatus.Failed);
-//			}
+			if (FindObjectOfType (typeof(BallScript))==null) {
+				Debug.Log ("failled");
+				SwitchState (GameStatus.Failed);
+			}
 //			if (allBlocksDestroyed) {
 //				SwitchState (GameStatus.Completed);
 //			}

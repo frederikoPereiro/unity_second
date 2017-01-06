@@ -26,7 +26,11 @@ public class BallScript : MonoBehaviour
 				this.GetComponent<Rigidbody2D> ().velocity = new Vector3 (2f, 10f);
 			}
 		}
+
+		Debug.Log (this.transform.position);
 	
 	}
+
+
 }
 

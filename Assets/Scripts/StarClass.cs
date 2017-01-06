@@ -6,7 +6,6 @@ public class StarClass : MonoBehaviour
 {
 	public int maxHits;
 	public int timeHit;
-	public AudioClip startClip;
 
 	// Use this for initialization
 	void Start ()
