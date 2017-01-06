@@ -36,15 +36,15 @@ public class GameManager : MonoBehaviour {
 		Time.timeScale = 1;
 
 		//find all objects of different types on a screen
-		allStars = FindObjectsOfType (typeof(StarClass)) as StarClass[];
-		allBalls = FindObjectsOfType (typeof(BallScript)) as BallScript[];
-		paddle = GameObject.FindObjectOfType<PaddleScript> ();
-		SwitchState (GameStatus.NotStart); 
+//		allStars = FindObjectsOfType (typeof(StarClass)) as StarClass[];
+//		allBalls = FindObjectsOfType (typeof(BallScript)) as BallScript[];
+//		paddle = GameObject.FindObjectOfType<PaddleScript> ();
+		SwitchState(GameStatus.NotStart); 
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		switch (GameStatus) {
+		switch (currentState) {
 		case GameStatus.NotStart:
 			if (Input.GetMouseButtonDown (0)) {
 				SwitchState (GameStatus.Played);
@@ -56,28 +56,46 @@ public class GameManager : MonoBehaviour {
 			minutes = Mathf.FloorToInt (Timer / 60f);
 			seconds = Mathf.FloorToInt (Timer - minutes * 50);
 			formattedTime = string.Format ("{0:0}:{1:00}", minutes, seconds);
-			bool allBlocksDestroyed = false;
-			if (FindObjectOfType (typeof(BallScript)) == null) {
-				SwitchState (GameStatus.Failed);
-			}
-			if (allBlocksDestroyed) {
-				SwitchState (GameStatus.Completed);
-			}
+//			bool allBlocksDestroyed = false;
+//			if (FindObjectOfType (typeof(BallScript)) == null) {
+//				SwitchState (GameStatus.Failed);
+//			}
+//			if (allBlocksDestroyed) {
+//				SwitchState (GameStatus.Completed);
+//			}
 			break;
 		case GameStatus.Failed:
+			Debug.Log ("failed");
 			break;
 		case GameStatus.Completed:
-			bool allBlockDestroyedFinal = false;
-			BallScript[] others = FindObjectsOfType (typeof(BallScript)) as BallScript[];
-			foreach (BallScript other in others) {
-				Destroy (other.gameObject);
-			}
 			break;
+//			bool allBlockDestroyedFinal = false;
+//			BallScript[] others = FindObjectsOfType (typeof(BallScript)) as BallScript[];
+//			foreach (BallScript other in others) {
+//				Destroy (other.gameObject);
+//			}
+//			break;
 		}
 	}
 	//game state
-	public void SwitchState(GameStatus gameState)
+	public void SwitchState(GameStatus newState)
 	{
-		
+		currentState = newState;
+		switch(currentState)
+		{
+		default:
+		case GameStatus.NotStart:
+			break;
+		case GameStatus.Played:
+			GetComponent<AudioSource> ().PlayOneShot (startClip);
+			break;
+		case GameStatus.Completed:
+			GetComponent<AudioSource> ().PlayOneShot (startClip);
+			break;
+		case GameStatus.Failed:
+			GetComponent<AudioSource> ().PlayOneShot (failedClip);
+			Debug.Log ("failed sount");
+			break;
+		}
 	}
 }
