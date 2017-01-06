@@ -1,10 +1,12 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+
 public class StarClass : MonoBehaviour
 {
 	public int maxHits;
 	public int timeHit;
+	public AudioClip startClip;
 
 	// Use this for initialization
 	void Start ()
@@ -24,6 +26,7 @@ public class StarClass : MonoBehaviour
 		if(timeHit == maxHits)
 		{
 			Destroy (gameObject);
+
 		}
 	}
 
