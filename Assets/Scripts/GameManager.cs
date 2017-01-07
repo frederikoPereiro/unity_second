@@ -61,16 +61,16 @@ public class GameManager : MonoBehaviour {
 			formattedTime = string.Format ("{0:0}:{1:00}", minutes, seconds);
 			ChangeText ("Time: " + formattedTime);
 			Debug.Log ("played");
-//			bool allBlocksDestroyed = false;
+			bool allBlocksDestroyed = false;
 			if (FindObjectOfType (typeof(BallScript)) == null) {
 				
 				SwitchState (GameStatus.Failed);
 				Debug.Log ("failled");
 			}
-			Debug.Log (FindObjectOfType (typeof(BallScript)));
-//			if (allBlocksDestroyed) {
-//				SwitchState (GameStatus.Completed);
-//			}
+//			Debug.Log (FindObjectOfType (typeof(BallScript)));
+			if (allBlocksDestroyed) {
+				SwitchState (GameStatus.Completed);
+			}
 			break;
 		case GameStatus.Failed:
 			Debug.Log ("failed");
@@ -79,11 +79,11 @@ public class GameManager : MonoBehaviour {
 		case GameStatus.Completed:
 			break;
 //			bool allBlockDestroyedFinal = false;
-//			BallScript[] others = FindObjectsOfType (typeof(BallScript)) as BallScript[];
-//			foreach (BallScript other in others) {
-//				Destroy (other.gameObject);
-//			}
-//			break;
+			BallScript[] others = FindObjectsOfType (typeof(BallScript)) as BallScript[];
+			foreach (BallScript other in others) {
+				Destroy (other.gameObject);
+			}
+			break;
 		}
 	}
 	//game state
@@ -103,7 +103,7 @@ public class GameManager : MonoBehaviour {
 			break;
 		case GameStatus.Failed:
 			GetComponent<AudioSource> ().PlayOneShot (failedClip);
-			Debug.Log ("failed sount");
+			Debug.Log ("failed sound");
 			break;
 		}
 	}
