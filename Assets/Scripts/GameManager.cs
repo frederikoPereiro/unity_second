@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 //status of game
 public enum GameStatus
@@ -40,6 +41,7 @@ public class GameManager : MonoBehaviour {
 		allBalls = FindObjectsOfType (typeof(BallScript)) as BallScript[];	//to find all balls
 //		Debug.Log (allBalls.Length);
 //		paddle = GameObject.FindObjectOfType<PaddleScript> ();
+
 		SwitchState(GameStatus.NotStart); 
 	}
 	
@@ -56,6 +58,7 @@ public class GameManager : MonoBehaviour {
 			minutes = Mathf.FloorToInt (Timer / 60f);
 			seconds = Mathf.FloorToInt (Timer - minutes * 50);
 			formattedTime = string.Format ("{0:0}:{1:00}", minutes, seconds);
+			ChangeText ("Time: " + formattedTime);
 //			Debug.Log ("played");
 //			bool allBlocksDestroyed = false;
 			if (FindObjectOfType (typeof(BallScript))==null) {
@@ -99,5 +102,13 @@ public class GameManager : MonoBehaviour {
 			Debug.Log ("failed sount");
 			break;
 		}
+	}
+
+	public void ChangeText(string text)
+	{
+		GameObject canvas = GameObject.Find("Canvas");
+		Text[] textValue = canvas.GetComponentsInChildren<Text> ();
+		textValue [0].text = text;
+
 	}
 }
