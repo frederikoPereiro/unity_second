@@ -5,9 +5,12 @@ using UnityEngine;
 
 public class Lose : MonoBehaviour {
 	private BallScript ballObject;
+	private GameManager gameManager;
 
 	IEnumerator Pause()
 	{
+		gameManager = GameObject.FindObjectOfType<GameManager> ();
+		gameManager.SwitchState (GameStatus.Failed);
 		
 		yield return new WaitForSeconds (2);
 		ballObject = GameObject.FindObjectOfType<BallScript> ();
