@@ -68,7 +68,8 @@ public class GameManager : MonoBehaviour {
 				Debug.Log ("failled");
 			}
 //			Debug.Log (FindObjectOfType (typeof(BallScript)));
-			if (allBlocksDestroyed) {
+			if (FindObjectOfType(typeof(StarClass))==null) {
+				Debug.Log ("WINNER");
 				SwitchState (GameStatus.Completed);
 			}
 			break;
