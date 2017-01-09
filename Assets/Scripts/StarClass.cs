@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+[RequireComponent(typeof(AudioSource), typeof(Animation))]
 
 public class StarClass : MonoBehaviour
 {

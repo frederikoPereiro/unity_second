@@ -28,9 +28,6 @@ public class BallScript : MonoBehaviour
 		}
 
 //		Debug.Log (this.transform.position);
-	
 	}
-
-
 }
 
