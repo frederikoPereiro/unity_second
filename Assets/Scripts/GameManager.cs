@@ -30,6 +30,16 @@ public class GameManager : MonoBehaviour {
 	private int minutes;
 	private int seconds;
 	public string formattedTime;
+	//level buttons
+	public GameObject restartButton;
+	public GameObject mainMenuButton;
+	public GameObject buttonBackground;
+
+
+
+
+
+
 
 	// Use this for initialization
 	void Start () {
@@ -116,4 +126,21 @@ public class GameManager : MonoBehaviour {
 		textValue [0].text = text;
 
 	}
+
+	//manage by buttons
+	public void EnableButtons()
+	{
+		restartButton.SetActive (true);
+		mainMenuButton.SetActive (true);
+		buttonBackground.SetActive (true);
+	}
+
+
+
+
+
+
+
+
+
 }
